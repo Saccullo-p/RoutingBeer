@@ -1,3 +1,16 @@
 <label>Type: </label>
 <input #query>
 <button (click)='submit(query)'>Search</button>
+
+<div *ngIf="results">
+    <div *ngFor="let t of results">
+        <div>
+            <br>
+           ID: {{t.id}} <br>
+           NAME: {{t.name}} <br>
+           TAGLINE: {{t.tagline}} <br>
+           FIRST BREWED: {{t.first_brewed}} <br>
+           DESCRIPTION: {{t.description}} <br>
+           <hr>
+    </div>
+</div>
