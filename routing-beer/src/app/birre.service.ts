@@ -11,8 +11,8 @@ export class BirreService {
     let obse = this.http.get(url);
     return obse;
   }
-  searchD(query: string){
-    const url = `https://api.punkapi.com/v2/beers?beer_name=${query}`;
+  searchD(query: any){
+    const url = `https://api.punkapi.com/v2/beers/${query}`;
     let obseD = this.http.get(url);
     return obseD;
   }

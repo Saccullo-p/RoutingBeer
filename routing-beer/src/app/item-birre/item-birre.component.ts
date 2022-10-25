@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { BirreService } from '../birre.service';
 
@@ -15,6 +16,7 @@ export class ItemBirreComponent implements OnInit {
   constructor(
   private route: ActivatedRoute,
   private router: Router,
+  private location: Location,
   private service: BirreService) {}
 
   ngOnInit(): void {
@@ -27,5 +29,9 @@ export class ItemBirreComponent implements OnInit {
     console.log(itemId); //Stampo su console
     this.foodServiceObs = this.service.searchD(itemId!);
     this.foodServiceObs.subscribe((data) => ((this.items = data), console.log(data)));
+  };
+
+  back() : void{
+    this.location.back();
   };
 }

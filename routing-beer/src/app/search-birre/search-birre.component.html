@@ -6,7 +6,7 @@
     <div *ngFor="let t of results">
         <div>
             <br>
-           ID: {{t.id}} <br>
+           <a [routerLink]="['/item-birre', t.id]"> ID: {{t.id}}</a><br>
            NAME: {{t.name}} <br>
            TAGLINE: {{t.tagline}} <br>
            FIRST BREWED: {{t.first_brewed}} <br>
