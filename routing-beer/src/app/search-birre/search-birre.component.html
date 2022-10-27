@@ -1,17 +1,17 @@
-<div class="center">
-<label>Type:&nbsp;</label>
-<input #query>
-<button (click)='submit(query)'>Search</button>
+<p class="text-center">
+    <label>Type:&nbsp;</label>
+    <input #query>
+    <button (click)='submit(query)'>Search</button>
+</p>
 <div *ngIf="results">
     <div *ngFor="let t of results">
         <div>
             <br>
             <a [routerLink]="['/item-birre', t.id]"> ID: {{t.id}}</a><br>
-                NAME: {{t.name}} <br>
-                TAGLINE: {{t.tagline}} <br>
-                FIRST BREWED: {{t.first_brewed}} <br>
-                DESCRIPTION: {{t.description}} <br>
-            <hr>
+            NAME: {{t.name}} <br>
+            TAGLINE: {{t.tagline}} <br>
+            FIRST BREWED: {{t.first_brewed}} <br>
+            DESCRIPTION: {{t.description}}
         </div>
     </div>
 </div>
